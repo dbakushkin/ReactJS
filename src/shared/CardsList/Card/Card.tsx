@@ -11,6 +11,17 @@ import { Title } from "./Title";
 import { UserLink } from "./UserLink";
 import { TextContent } from "./TextContent";
 import { MetaData } from "./MetaData";
+import { Dropdown } from "../../Dropdown";
+import { GenericList } from "../../GenericList/GenericList";
+import { generateId } from "../../../utils/react/generateRandomIndex";
+
+const LIST = [
+  { As: "a" as const, text: "Комментарии" },
+  { As: "a" as const, text: "Поделиться" },
+  { As: "a" as const, text: "Скрыть" },
+  { As: "a" as const, text: "Сохранить" },
+  { As: "a" as const, text: "Пожаловаться" },
+].map(generateId);
 
 export function Card() {
   return (
@@ -24,6 +35,14 @@ export function Card() {
       </TextContent>
       <Preview />
       <MenuButton />
+      <Dropdown
+        onOpen={() => console.log("opened")}
+        onClose={() => console.log("closed")}
+        button={<MenuButton />}
+      >
+        {" "}
+        <GenericList list={LIST} />
+      </Dropdown>
       <Controls>
         <KarmaCounter />
         <CommentsButton />
