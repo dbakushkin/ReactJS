@@ -7,6 +7,7 @@ interface IDropdownProps {
   isOpen?: boolean;
   onOpen?: () => void;
   onClose?: () => void;
+  classList?: string;
 }
 
 const NOOP = () => {};
@@ -29,13 +30,11 @@ export function Dropdown({
   };
 
   return (
-    <div className={styles.container}>
+    <div>
       <div onClick={handleOpen}>{button}</div>
       {isDropdownOpen && (
         <div className={styles.listContainer}>
-          <ul className={styles.list} onClick={() => setIsDropdownOpen(false)}>
-            {children}
-          </ul>
+          <ul className={styles.list}>{children}</ul>
         </div>
       )}
     </div>
