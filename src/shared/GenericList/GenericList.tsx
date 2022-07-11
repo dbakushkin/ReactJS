@@ -1,7 +1,7 @@
-import React from "react";
+import React, { ReactNode } from "react";
 
 interface IItem {
-  text: string;
+  listElement: ReactNode;
   id: string;
   onClick?: (id: string) => void;
   className?: string;
@@ -18,16 +18,18 @@ const noop = () => {};
 export function GenericList({ list }: IGenericListProps) {
   return (
     <>
-      {list.map(({ As = "div", text, onClick = noop, className, id, href }) => (
-        <As
-          className={className}
-          onClick={() => onClick(id)}
-          key={id}
-          href={href}
-        >
-          {text}
-        </As>
-      ))}
+      {list.map(
+        ({ As = "div", listElement, onClick = noop, className, id, href }) => (
+          <As
+            className={className}
+            onClick={() => onClick(id)}
+            key={id}
+            href={href}
+          >
+            <a href="">{listElement}</a>
+          </As>
+        )
+      )}
     </>
   );
 }
