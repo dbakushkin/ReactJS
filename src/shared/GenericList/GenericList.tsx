@@ -1,7 +1,7 @@
 import React, { ReactNode } from "react";
 
 interface IItem {
-  listElement: ReactNode;
+  listElement: React.ReactNode;
   id: string;
   onClick?: (id: string) => void;
   className?: string;
@@ -26,7 +26,7 @@ export function GenericList({ list }: IGenericListProps) {
             key={id}
             href={href}
           >
-            <a href="">{listElement}</a>
+            {listElement}
           </As>
         )
       )}
