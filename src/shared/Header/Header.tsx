@@ -1,4 +1,5 @@
 import React from "react";
+import { EIcons, Icon } from "../Icon";
 import styles from "./header.css";
 import { SearchBlock } from "./SearchBlock";
 import { SortBlock } from "./SortBlock";
@@ -10,6 +11,7 @@ export function Header() {
       <SearchBlock />
       <ThreadTitle />
       <SortBlock />
+      <Icon name={EIcons.block} size={28} />
     </header>
   );
 }
