@@ -1,10 +1,11 @@
 import * as React from "react";
 
-export const BlockIcon = ({ size = 12 }) => {
+export const BlockIcon = () => {
   return (
     <svg
-      width={size}
-      height={size}
+      style={{ width: "inherit", height: "inherit" }}
+      width="12"
+      height="12"
       viewBox="0 0 12 12"
       fill="none"
       preserveAspectRatio="none"

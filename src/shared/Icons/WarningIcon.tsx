@@ -3,6 +3,7 @@ import * as React from "react";
 export const WarningIcon = () => {
   return (
     <svg
+      style={{ width: "inherit", height: "inherit" }}
       width="14"
       height="12"
       viewBox="0 0 14 12"
