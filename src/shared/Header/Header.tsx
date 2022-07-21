@@ -11,7 +11,6 @@ export function Header() {
       <SearchBlock />
       <ThreadTitle />
       <SortBlock />
-      <Icon name={EIcons.block} size={28} />
     </header>
   );
 }
